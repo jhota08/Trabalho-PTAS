@@ -2,7 +2,7 @@ import express from 'express';
 import categoriasRoutes from './routes/categorias.routes.js';
 import contasRoutes from './routes/contas.routes.js';
 import lancamentosRoutes from './routes/lancamentos.routes.js';
-import tarefasRoutes from './routes/usuarios.routes.js';
+import usuariosRoutes from './routes/usuarios.routes.js';
 
 const app = express();
 
