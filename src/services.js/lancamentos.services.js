@@ -1,4 +1,4 @@
-import * as model from '../models/lancamentos.model.js';
+import * as model from '../models/lancamentos.models.js';
 
 export class ErroDeValidacao extends Error {
   constructor(mensagem) {
