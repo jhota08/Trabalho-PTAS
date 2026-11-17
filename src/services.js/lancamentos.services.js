@@ -6,7 +6,7 @@ export class ErroDeValidacao extends Error {
     this.name = 'ErroDeValidacao';
   }
 }
-// O MongoDB guarda o identificador em `_id` (ObjectId). A API expõe `id` como texto, e é isso que este formato devolve.
+
 function paraLancamento (documento) {
   return {
         id: 1,

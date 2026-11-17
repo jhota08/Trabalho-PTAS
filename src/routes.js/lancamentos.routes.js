@@ -1,8 +1,9 @@
 import { Router } from 'express';
+import * as controller from "../controllers/lancamentos.controller.js"
 
 const roteador = Router();
 
-let usuarios = {
+let lancamentos = {
     
         id: 1,
         usuarioId: 1,
@@ -14,12 +15,10 @@ let usuarios = {
         data: "2026-10-01"
 };
 
-roteador.get('/', (req, res) => {
-    res.json(usuarios);
-});
+roteador.get('/', controller.listarTodos());
 
 roteador.post('/', (req, res) => {
-    const novoUsuario = {
+    const novolancamento = {
         id: lancamentos.length + 1,
         usuarioId: req.body.usuarioId,
         contaId: req.body.contaId,
@@ -38,15 +37,15 @@ roteador.post('/', (req, res) => {
 roteador.get('/:id', (req, res) => {
     const id = parseInt(req.params.id);
 
-    const usuario = usuarios.find(c => c.id === id);
+    const lancamentos = lancamentos.find(l => l.id === id);
 
-    if (!usuario) {
+    if (!lancamentos) {
         return res.status(404).json({
-            erro: "Usuario não encontrada"
+            erro: "lancamento não encontrado"
         });
     }
 
-    res.json(usuario);
+    res.json(lanvcamento);
 });
 
 export default roteador;

@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import * as controller from '../controllers/categorias.controller.js'
 
 const roteador = Router();
 
@@ -8,9 +9,7 @@ let categorias = [
     { id: 3, nome: "Salário" }
 ];
 
-roteador.get('/', (req, res) => {
-    res.json(categorias);
-});
+roteador.get('/', controller.listarTodas());
 
 roteador.post('/', (req, res) => {
     const novaCategoria = {

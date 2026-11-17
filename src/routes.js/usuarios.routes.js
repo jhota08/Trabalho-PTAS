@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import * as controller from "../controllers/usuario.controller.js"
 
 const roteador = Router();
 
@@ -7,9 +8,7 @@ let usuarios = [
     { id: 2, nome: "Maria", email: "maria@gmail.com" }
 ];
 
-roteador.get('/', (req, res) => {
-    res.json(usuarios);
-});
+roteador.get('/', controller.listarTodos());
 
 roteador.post('/', (req, res) => {
     const novoUsuario = {

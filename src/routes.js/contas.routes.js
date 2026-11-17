@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import * as controller from "../controllers/contas.controller.js"
 
 const roteador = Router();
 
@@ -7,9 +8,7 @@ let conta = [
     { id: 2, usuarioId: 2, nome: "Conta principal", saldo: 500 }
 ];
 
-roteador.get('/', (req, res) => {
-    res.json(conta);
-});
+roteador.get('/', controller.listarTodas());
 
 roteador.post('/', (req, res) => {
     const novaConta = {
