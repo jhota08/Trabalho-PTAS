@@ -36,4 +36,7 @@ roteador.get('/:id', (req, res) => {
     res.json(categoria);
 });
 
+//roteador.put('/:id', controller.atualizar)
+//roteador.delete('/:id', controller.deletar)
+
 export default roteador;
