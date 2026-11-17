@@ -29,9 +29,9 @@ roteador.post('/', (req, res) => {
         data: req.body.data
     };
 
-    categorias.push(novoUsuario);
+    categorias.push(novolancamento);
 
-    res.status(201).json(novoUsuario);
+    res.status(201).json(novolancamento);
 });
 
 roteador.get('/:id', (req, res) => {
@@ -45,7 +45,7 @@ roteador.get('/:id', (req, res) => {
         });
     }
 
-    res.json(lanvcamento);
+    res.json(lancamento);
 });
 
 export default roteador;
